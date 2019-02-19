@@ -1,0 +1,26 @@
+{
+  "name": "json-db-generator",
+  "version": "1.0.0",
+  "description": "JS utility to generate a json db entry as part of an npm build script.",
+  "main": "index.js",
+  "scripts": {
+    "generate-mock-api-data": "node ./lib/generators.js",
+    "prestart": "npm run generate-mock-api-data",
+    "test": "node ./node_modules/jest/bin/jest.js --watchAll"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "faker": "github:Marak/faker.js#master",
+    "json-server": "^0.14.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddielee394/json-db-generator.git"
+  },
+  "author": "eddielee394",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eddielee394/json-db-generator/issues"
+  },
+  "homepage": "https://github.com/eddielee394/json-db-generator#readme"
+}
