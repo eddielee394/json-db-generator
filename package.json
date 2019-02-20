@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "generate-mock-api-data": "node ./lib/generators.js",
-    "prestart": "npm run generate-mock-api-data",
+    "start:build-api-data": "npm run generate-mock-api-data",
+    "start:api-server": "node ./lib/server.js",
     "test": "node ./node_modules/jest/bin/jest.js --watchAll"
   },
   "dependencies": {
