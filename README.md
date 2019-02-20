@@ -4,16 +4,32 @@ Simple node based data generator used to create development data sets on the fly
 **WORK IN PROGRESS**
 
 ## Usage
-- create schemas
-- import `compileDbData(schema)` method
+- create schemas (See examples)
+- fire the `compileDbData(schema)` & a db.json file will be generated for you.
+- You can also run the npm scripts to start the json server and your data will be accessible via http requests.
 
 ```
 import compileDbData from 'json-db-generator'
 
-compileDbData(schemas:array)
+compileDbData([schemas])
 ```
+
+### Schemas
+Schemas should be a function that returns an object.  The only required property is the `key` property which is used to identify each schema.
+
+See the [Faker.js](https://github.com/Marak/faker.js) docs for specific api parameters for custom data rendering.   You can also check out the [basic schema examples](./examples) in this package
+
+## NPM scripts
+There's some [example scripts](package.json) that can be copied over to your package.json file as well.
 
 ## Packages in use:
 [Faker.js](https://github.com/Marak/faker.js)
 
 [Json Server](https://github.com/typicode/json-server)
+
+## Notes
+If you're running android studio emulator, any api requests have to be directed to:  `http://10.0.2.2:4000`.  [More info](  https://stackoverflow.com/questions/5495534/java-net-connectexception-localhost-127-0-0-18080-connection-refused)
+If using Axios, an example request would look something like this:
+```
+static fetchDecks = () => axios.get('http://10.0.2.2:4000/api/decks');
+```
