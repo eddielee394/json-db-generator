@@ -15,12 +15,16 @@ compileDbData([schemas])
 ```
 
 ### Schemas
-Schemas should be a function that returns an object.  The only required property is the `key` property which is used to identify each schema.
+Schemas should be a function that returns an object.  The only required property is the `key` property which is used to identify each schema & api path.
 
 See the [Faker.js](https://github.com/Marak/faker.js) docs for specific api parameters for custom data rendering.   You can also check out the [basic schema examples](./examples) in this package
 
 ## NPM scripts
 There's some [example scripts](package.json) that can be copied over to your package.json file as well.
+
+## Mock API Requests
+If using the json server, once you generate your db.json file you can then access each schema key via the api routes.  For example:  
+`http://localhost:4000/api/posts` will return a json object consisting of the entries in your `posts` schema.  For more details, check out the [Json Server](https://github.com/typicode/json-server) docs.
 
 ## Packages in use:
 [Faker.js](https://github.com/Marak/faker.js)
